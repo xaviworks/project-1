@@ -1,0 +1,99 @@
+# KV file for TP App
+
+<GPAApp>:
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (None, None)
+        width: dp(250)
+        height: dp(350)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        Image:
+            source: 'logo.jpg'
+            size_hint_y: None
+            height: dp(100)
+
+        Label:
+            text: 'Username'
+            font_size: dp(14)
+
+        TextInput:
+            multiline: False
+            font_size: dp(14)
+            id: username_input
+
+        Label:
+            text: 'Password'
+            font_size: dp(14)
+
+        TextInput:
+            password: True
+            multiline: False
+            font_size: dp(14)
+            id: password_input
+
+        Button:
+            text: 'Login'
+            font_size: dp(14)
+            background_normal: ""
+            background_color: 0.2, 0.7, 0.3, 1
+            size_hint: (None, None)
+            size: dp(120), dp(40)
+            on_press: root.login()
+
+        Label:
+            text: ''
+            font_size: dp(12)
+            color: 1, 0, 0, 1
+            id: error_label
+
+<CalculatorScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (None, None)
+        width: dp(250)
+        height: dp(350)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        Label:
+            text: 'Number of Subjects'
+            font_size: dp(14)
+
+        TextInput:
+            multiline: False
+            font_size: dp(14)
+            id: num_subjects_input
+
+        Label:
+            text: 'Grades (comma-separated)'
+            font_size: dp(14)
+
+        TextInput:
+            multiline: False
+            font_size: dp(14)
+            id: grades_input
+
+        Label:
+            text: 'Units (comma-separated)'
+            font_size: dp(14)
+
+        TextInput:
+            multiline: False
+            font_size: dp(14)
+            id: units_input
+
+        Button:
+            text: 'Calculate GPA'
+            font_size: dp(14)
+            background_normal: ""
+            background_color: 0.2, 0.7, 0.3, 1
+            size_hint: (None, None)
+            size: dp(160), dp(40)
+            on_press: root.calculate_gpa()
+
+        Label:
+            text: ''
+            font_size: dp(14)
+            id: result_label
